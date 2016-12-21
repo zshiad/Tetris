@@ -1,0 +1,34 @@
+SHI ZHENMEI 20329335  zshiad
+LIANG GEYU 20328484 gliangad 
+
+Structure:
+1. There are in total 5 classes we implement in this project, namely Window, 
+Borad, Preview, State, Item. 
+2. Window, Board, Preview and State are all QObjects while Item is used in 
+State to help complete the algorithm of the game.
+3. We separate the algorithm (in State and Item) from the UI. 
+
+Window: This class is the main window of this project. We construct other objects 
+        except for Item in this class as its private member. It also has 2 Qlabel 
+        used to display score and level. 
+        Its main functions include:
+        (1) Build the connections between other objects.
+        (2) Listen to keyPressEvent and send the signals.
+        (3) Arrange and show all the widgets used in this game.
+        
+State: (1)This class contains the main algorithm of this project. It constructs 
+          a pointer to items and uses its member function to judge and determain 
+          the position of items to achieve the game.
+       (2)To store the information of the game, it constructs a pointer to 2D 
+          int array where integers from 0 to 7 represent different color
+          (0 means no block at that point).
+
+Item: This class is used to build a tetrix piece in state. Every piece has a
+      2D int array and an int to represent its shape and colour.
+        
+        
+Board and Preview: They're used to listen to the signals from state and update
+                   themselves to display the game. 
+                   Borad recieves a pointer to 2D integer array from state.
+                   Preview recieves the shape number of the text tetrix piece. 
+       
